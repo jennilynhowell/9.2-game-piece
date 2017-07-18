@@ -14,8 +14,10 @@ public class Main {
         myPiece.move(3, 18); //does not change location
         myPiece.unfreeze();
         myPiece.move(3, 18);
+        myPiece.move(40, 63); //does not move as it's out of bounds
 
         myPiece.printInfo();
+
     }
 
 

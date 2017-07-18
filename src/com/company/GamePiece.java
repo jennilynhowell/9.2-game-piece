@@ -7,11 +7,20 @@ public class GamePiece {
     private boolean frozen;
     private String name;
     private String color;
+    private int minX;
+    private int maxX;
+    private int minY;
+    private int maxY;
 
     public GamePiece() {
         this.positionX = 0;
         this.positionY = 0;
         this.frozen = false;
+
+        this.minX = 0;
+        this.maxX = 25;
+        this.minY = 0;
+        this.maxY = 35;
     }
 
     public int getPositionX() {
@@ -42,12 +51,29 @@ public class GamePiece {
         return color;
     }
 
-    public void move(int x, int y) {
-        if (!frozen) {
-            this.positionX = x;
-            this.positionY = y;
-        }
+    public int getMaxX() {
+        return maxX;
+    }
 
+    public int getMaxY() {
+        return maxY;
+    }
+
+    public int getMinX() {
+        return minX;
+    }
+
+    public int getMinY() {
+        return minY;
+    }
+
+    public void move(int x, int y) {
+        if ((x >= this.minX && x <= this.maxX) && (y >= this.minY && y <= this.maxY)) {
+            if (!frozen) {
+                this.positionX = x;
+                this.positionY = y;
+            }
+        }
     }
 
     public void freeze() {
