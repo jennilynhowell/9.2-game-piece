@@ -3,6 +3,20 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
+        GamePiece myPiece = new GamePiece();
+
+        myPiece.setColor("purple");
+        myPiece.setName("Purple Puma");
+
+        myPiece.move(2, 18);
+        myPiece.freeze();
+        myPiece.move(3, 18); //does not change location
+        myPiece.unfreeze();
+        myPiece.move(3, 18);
+
+        myPiece.printInfo();
     }
+
+
 }
